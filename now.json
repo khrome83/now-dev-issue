@@ -1,1 +1,11 @@
-{"version":2,"name":"now-dev-issue","builds":[{"src":"package.json","use":"@now/static-build"}]}
+{
+  "version": 2,
+  "name": "now-dev-issue",
+  "builds": [
+    { "src": "package.json", "use": "@now/static-build" },
+    { "src": "api/v1/*/*.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/api/v1/status", "methods": ["GET"], "dest": "/api/v1/status/index.js" }
+  ]
+}
